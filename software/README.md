@@ -10,7 +10,7 @@
 
 ## メイン処理
 搭載計器の処理内容は基本的に以下の論理回路に準拠しています。
-![論理回路](/NSE2023/STM32-devlopment/software/論理回路.jpg)
+![論理回路](/figures/論理回路.jpg)
 
 RocketControllerの処理内容は以下の通りです。
 ```cpp
@@ -111,11 +111,11 @@ STM32マイコンで、SPIを介してSDカードに書き込みを行う場合�
 
 MISO,MOSIのピンのプルアップ設定を忘れないようにしましょう。以下の写真のように設定すれば問題ありません。　
 
-![SPIconfig](/NSE2023/STM32-devlopment/software/SPIconfig.png)
+![SPIconfig](/figures/SPIconfig.png)
 
 また、筆者が使用していたFATFSの設定内容を以下に示します。マイコンのクロック周波数は32MHzです。
 
-![FATFSconfig](/NSE2023/STM32-devlopment/software/FatfsConfig.png)
+![FATFSconfig](/figures/FatfsConfig.png)
 
 以上の内容に準拠すれば問題なくSDカードへの書き込みを行えるはずです。設定項目が多く大変ですが、サイトで紹介されている手法を踏襲することが一番の近道です。
 

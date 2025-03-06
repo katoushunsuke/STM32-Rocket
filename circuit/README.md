@@ -34,7 +34,7 @@ STM32マイコンにはSWOと呼ばれるピンが用意されており、手元
 
 筆者は[このサイト](https://yukblog.net/stm32cubeide-printf-swo/)をもとにSWOによるprintfの動作試験を行いました。基本的にはサイトに従う形でかまいませんが、1.12以降のCubeIDEを用いる場合は追加で以下の設定が必要です。
 project内のiocファイルを開き、System Core > SYSを加え、写真の通りに設定を行ってください。
-![printfツールを用いる際の追加設定](/NSE2023/STM32-devlopment/circuit/printfConfig.png)
+![printfツールを用いる際の追加設定](/figures/printfConfig.png)
 これにより、printfツールを正常に使用することができるはずです。また、printfツールでfloat型の変数を表示したい場合は[追加設定](https://yukblog.net/stm32cubeide-printf-float/)が必要です。　　
 
 陥りやすいミスと対策法を以下に示します。
@@ -89,12 +89,12 @@ SDカードの書き込みにはSPI通信を用いています。SPI通信は大
 
 完全ではありませんが、上記の3点に留意した以下の基板では、SDカードの書き込みに成功しています。  
 
-![SDcard_sample](/NSE2023/STM32-devlopment/circuit/SDcard.png)
+![SDcard_sample](/figures/SDcard.png)
 
 ### PCB基板上でのUARTデバイスの動作試験
 GPS、RM92Aともに特別な設定はいりませんが、RM92Aは13期代にとって初めて使用する無線モジュールになるので、簡単な使用法をここで紹介します。  
 回路の情報は[データシート](http://www.cec-chiyoda.co.jp/document/rflink_RM-92A_RM-92C.pdf)を参考にしてください。一般的な無線モジュールと同様にRX,TXのピンをマイコンに接続すれば問題なく使用することができます。  
 データシートに従えば回路構成は以下のようになります。 
-![RM92A](/NSE2023/STM32-devlopment/circuit/RM92A.png)  
+![RM92A](/figures/RM92A.png)  
 PIN13は無線のパラメータ設定時にHIGHとLOWを切り替える必要があるため、図のようにスライドスイッチを介してGNDに接続しています。  
 RM92Aを導入した背景は、IM920では海打ち機体において十分な通信距離を確保できないため、より長い距離通信できる無線モジュールが必要だったからです。RM92Aは見通し最大100kmの通信が可能であり、一般的な条件下でも10km以上の通信が可能であると言われています。特別な理由がなければ海打ち機体にはIM920ではなくRM92Aを搭載することを推奨します。
